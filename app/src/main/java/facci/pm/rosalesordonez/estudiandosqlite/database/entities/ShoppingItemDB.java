@@ -89,36 +89,4 @@ public class ShoppingItemDB {
     }
 
 
-    public void clearAllItems() {
-        //TODO: Todo el código necesario para ELIMINAR todos los Items de la Base de datos
-
-        SQLiteDatabase db= dbHelper.getWritableDatabase();
-        db.delete(ShoppingElementEntry.TABLE_NAME, null, null);
-
-    }
-
-    public void updateItem(ShoppingItem shoppingItem ) {
-        //TODO: Todo el código necesario para ACTUALIZAR un Item en la Base de datos
-
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(ShoppingElementEntry.COLUMN_NAME_TITLE,
-                shoppingItem.getName());
-        db.update(ShoppingElementEntry.TABLE_NAME, values,
-                ShoppingElementEntry._ID + " = " + shoppingItem.getId(),
-                null);
-        db.close();
-
-    }
-
-    public void deleteItem(ShoppingItem shoppingItem) {
-        //TODO: Todo el código necesario para ELIMINAR un Item de la Base de datos
-
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String ctgFer = ShoppingElementEntry._ID + " = " + shoppingItem.getId();
-        db.delete(ShoppingElementEntry.TABLE_NAME, ctgFer, null);
-        db.close();
-
-
-    }
 }
