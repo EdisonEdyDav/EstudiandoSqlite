@@ -26,18 +26,21 @@ public class ShoppingItemDB {
     public static abstract class ShoppingElementEntry implements BaseColumns {
         public static final String TABLE_NAME = "entry";
         public static final String COLUMN_NAME_TITLE = "title";
+        public static final String COLUMN_NAME_DIRECCION = "direccion";
 
         public static final String CREATE_TABLE = "CREATE TABLE " +
                 TABLE_NAME + " (" +
                 _ID + " INTEGER PRIMARY KEY AUTOINCREMENT" + COMMA_SEP +
-                COLUMN_NAME_TITLE + TEXT_TYPE + " )";
+                COLUMN_NAME_TITLE + TEXT_TYPE
+                + COMMA_SEP +
+                COLUMN_NAME_DIRECCION + TEXT_TYPE
+                + " )";
 
         public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     }
 
 
     public void insertElement(String productName) {
-        //TODO: Todo el código necesario para INSERTAR un Item a la Base de datos
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
