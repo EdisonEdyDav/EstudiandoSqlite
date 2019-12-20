@@ -40,11 +40,12 @@ public class ShoppingItemDB {
     }
 
 
-    public void insertElement(String productName) {
+    public void insertElement(String productName, String direccion) {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(ShoppingElementEntry.COLUMN_NAME_TITLE, productName);
+        contentValues.put(ShoppingElementEntry.COLUMN_NAME_DIRECCION, direccion);
         db.insert(ShoppingElementEntry.TABLE_NAME, null, contentValues);
 
     }

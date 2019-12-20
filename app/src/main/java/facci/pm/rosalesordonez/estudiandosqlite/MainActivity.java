@@ -40,22 +40,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertProducts() {
-        shoppingItemDB.insertElement("Tomatoes");
-        shoppingItemDB.insertElement("Water");
-        shoppingItemDB.insertElement("Apples");
-        shoppingItemDB.insertElement("Soup");
-        shoppingItemDB.insertElement("Coffee");
-        shoppingItemDB.insertElement("Bread");
-        shoppingItemDB.insertElement("Juice");
-        shoppingItemDB.insertElement("Pizza");
-        shoppingItemDB.insertElement("Mozzarella");
-        shoppingItemDB.insertElement("Onion");
-        shoppingItemDB.insertElement("Milk");
-        shoppingItemDB.insertElement("Eggs");
-        shoppingItemDB.insertElement("Bananas");
-        shoppingItemDB.insertElement("Toilet rolls");
-        shoppingItemDB.insertElement("Butter");
-        shoppingItemDB.insertElement("Carrots");
+        shoppingItemDB.insertElement("Tomatoes","holis");
+        shoppingItemDB.insertElement("Water","caracola");
+
     }
 
 }
