@@ -47,6 +47,7 @@ public class ShoppingItemAdapter extends ArrayAdapter<ShoppingItem> {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(context).inflate(R.layout.item_list_shopping, parent, false);
             viewHolder.mItemName = view.findViewById(R.id.shopping_tv_item_name);
+            viewHolder.mDireccion = view.findViewById(R.id.direccion);
             view.setTag(viewHolder);
 
         } else {
@@ -56,11 +57,13 @@ public class ShoppingItemAdapter extends ArrayAdapter<ShoppingItem> {
 
         // Set text with the item name
         viewHolder.mItemName.setText(shoppingItems.get(position).getName());
+        viewHolder.mDireccion.setText(shoppingItems.get(position).getDireccion());
 
         return view;
     }
 
     static class ViewHolder {
         TextView mItemName;
+        TextView mDireccion;
     }
 }

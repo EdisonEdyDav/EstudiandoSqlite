@@ -55,7 +55,8 @@ public class ShoppingItemDB {
         ArrayList<ShoppingItem> shoppingItems = new ArrayList<>();
 
         String[] allColumns = { ShoppingElementEntry._ID,
-                ShoppingElementEntry.COLUMN_NAME_TITLE};
+                ShoppingElementEntry.COLUMN_NAME_TITLE,
+                ShoppingElementEntry.COLUMN_NAME_DIRECCION};
 
         Cursor cursor = dbHelper.getReadableDatabase().query(
                 ShoppingElementEntry.TABLE_NAME,    // The table to query
@@ -70,7 +71,7 @@ public class ShoppingItemDB {
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {
-            ShoppingItem shoppingItem = new ShoppingItem(getItemId(cursor), getItemName(cursor));
+            ShoppingItem shoppingItem = new ShoppingItem(getItemId(cursor), getItemName(cursor), getItemDireccion(cursor));
             shoppingItems.add(shoppingItem);
             cursor.moveToNext();
         }
@@ -86,6 +87,9 @@ public class ShoppingItemDB {
 
     private String getItemName(Cursor cursor) {
         return cursor.getString(cursor.getColumnIndexOrThrow(ShoppingElementEntry.COLUMN_NAME_TITLE));
+    }
+    private String getItemDireccion(Cursor cursor) {
+        return cursor.getString(cursor.getColumnIndexOrThrow(ShoppingElementEntry.COLUMN_NAME_DIRECCION));
     }
 
 

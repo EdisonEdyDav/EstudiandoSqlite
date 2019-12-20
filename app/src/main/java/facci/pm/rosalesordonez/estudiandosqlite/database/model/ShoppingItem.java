@@ -5,10 +5,13 @@ public class ShoppingItem {
 
     private long id;
     private String name;
+    private String direccion;
 
-    public ShoppingItem(long id, String name) {
+
+    public ShoppingItem(long id, String name, String direccion) {
         this.id = id;
         this.name = name;
+        this.direccion = direccion;
     }
 
     public long getId() {
@@ -21,5 +24,13 @@ public class ShoppingItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 }
