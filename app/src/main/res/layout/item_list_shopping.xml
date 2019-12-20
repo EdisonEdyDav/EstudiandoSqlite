@@ -1,21 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
 
     <TextView
-        android:id="@+id/shopping_tv_item_name"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:paddingLeft="20dp"
-        android:paddingStart="20dp"
-        android:paddingRight="20dp"
-        android:paddingEnd="20dp"
-        android:textStyle="bold"
-        />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:text="Card title"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
+        android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
+
+    <TextView
+        android:id="@+id/direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card price"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_below="@+id/title"
+        android:textAppearance="@android:style/TextAppearance.Holo.Small"
+        android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
+
+    <TextView
+        android:id="@+id/seccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card seccion"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_below="@+id/direccion"
+        android:textAppearance="@android:style/TextAppearance.Holo.Small"
+        android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
+
+    <TextView
+        android:id="@+id/telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card seccion"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_below="@+id/seccion"
+        android:textAppearance="@android:style/TextAppearance.Holo.Small"
+        android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
+
+
+</RelativeLayout>
