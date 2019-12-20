@@ -22,7 +22,7 @@
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
 
     <TextView
-        android:id="@+id/seccion"
+        android:id="@+id/fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Card seccion"
@@ -35,9 +35,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Card telefono"
-        android:layout_below="@+id/seccion"
+        android:layout_below="@+id/fecha"
         android:textAppearance="@android:style/TextAppearance.Holo.Small"
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
+
 
 
 </RelativeLayout>

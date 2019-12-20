@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void insertProducts() {
-        shoppingItemDB.insertElement("Tomatoes","holis");
-        shoppingItemDB.insertElement("Water","caracola");
+        shoppingItemDB.insertElement("P0001","Avion: Tame 2305","lunes");
+        shoppingItemDB.insertElement("P0002","Avion: Avianca 3402","martes");
 
     }
 

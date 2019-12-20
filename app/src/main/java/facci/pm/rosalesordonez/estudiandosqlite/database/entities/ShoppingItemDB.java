@@ -27,6 +27,7 @@ public class ShoppingItemDB {
         public static final String TABLE_NAME = "entry";
         public static final String COLUMN_NAME_TITLE = "title";
         public static final String COLUMN_NAME_DIRECCION = "direccion";
+        public static final String COLUMN_NAME_FECHA = "fecha";
 
         public static final String CREATE_TABLE = "CREATE TABLE " +
                 TABLE_NAME + " (" +
@@ -34,18 +35,21 @@ public class ShoppingItemDB {
                 COLUMN_NAME_TITLE + TEXT_TYPE
                 + COMMA_SEP +
                 COLUMN_NAME_DIRECCION + TEXT_TYPE
+                + COMMA_SEP +
+                COLUMN_NAME_FECHA + TEXT_TYPE
                 + " )";
 
         public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     }
 
 
-    public void insertElement(String productName, String direccion) {
+    public void insertElement(String productName, String direccion, String fecha) {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(ShoppingElementEntry.COLUMN_NAME_TITLE, productName);
         contentValues.put(ShoppingElementEntry.COLUMN_NAME_DIRECCION, direccion);
+        contentValues.put(ShoppingElementEntry.COLUMN_NAME_FECHA, fecha);
         db.insert(ShoppingElementEntry.TABLE_NAME, null, contentValues);
 
     }
@@ -57,7 +61,8 @@ public class ShoppingItemDB {
 
         String[] allColumns = { ShoppingElementEntry._ID,
                 ShoppingElementEntry.COLUMN_NAME_TITLE,
-                ShoppingElementEntry.COLUMN_NAME_DIRECCION};
+                ShoppingElementEntry.COLUMN_NAME_DIRECCION,
+        ShoppingElementEntry.COLUMN_NAME_FECHA};
 
         Cursor cursor = dbHelper.getReadableDatabase().query(
                 ShoppingElementEntry.TABLE_NAME,    // The table to query
@@ -72,7 +77,8 @@ public class ShoppingItemDB {
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {
-            ShoppingItem shoppingItem = new ShoppingItem(getItemId(cursor), getItemName(cursor), getItemDireccion(cursor));
+            ShoppingItem shoppingItem = new ShoppingItem(getItemId(cursor), getItemName(cursor),
+                    getItemDireccion(cursor),getItemFecha(cursor));
             shoppingItems.add(shoppingItem);
             cursor.moveToNext();
         }
@@ -91,6 +97,10 @@ public class ShoppingItemDB {
     }
     private String getItemDireccion(Cursor cursor) {
         return cursor.getString(cursor.getColumnIndexOrThrow(ShoppingElementEntry.COLUMN_NAME_DIRECCION));
+    }
+
+    private String getItemFecha(Cursor cursor) {
+        return cursor.getString(cursor.getColumnIndexOrThrow(ShoppingElementEntry.COLUMN_NAME_FECHA));
     }
 
 
