@@ -5,11 +5,10 @@
 
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/shopping_tv_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Card title"
-        android:layout_toRightOf="@+id/thumbnail"
         android:textAppearance="@android:style/TextAppearance.Holo.Medium"
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
 
@@ -18,8 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Card price"
-        android:layout_toRightOf="@+id/thumbnail"
-        android:layout_below="@+id/title"
+        android:layout_below="@+id/shopping_tv_item_name"
         android:textAppearance="@android:style/TextAppearance.Holo.Small"
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
 
@@ -28,7 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Card seccion"
-        android:layout_toRightOf="@+id/thumbnail"
         android:layout_below="@+id/direccion"
         android:textAppearance="@android:style/TextAppearance.Holo.Small"
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
@@ -37,8 +34,7 @@
         android:id="@+id/telefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Card seccion"
-        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Card telefono"
         android:layout_below="@+id/seccion"
         android:textAppearance="@android:style/TextAppearance.Holo.Small"
         android:layout_marginLeft="?android:attr/listPreferredItemPaddingLeft"/>
